@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bottomappbar.exam.com.mainactivity.MainActivity">
+    tools:context="com.exam.bottomappbar.MainActivity">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/flContainerHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:fabAttached="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabCradleVerticalOffset="12dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="bottom|center_horizontal"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_anchor="@+id/bottom_appbar"/>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
